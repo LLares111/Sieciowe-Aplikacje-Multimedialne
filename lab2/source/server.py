@@ -22,7 +22,11 @@ class web_server(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(b"Hello World!\n")
             #self.wfile.write(self.path)
             vid = parse_qs(parsed_url.query)['videoPlayer'][0]
-            self.wfile.write(vid)
+            f = open('index.html', 'w')
+            message = """<html><body><video width="320" height="240" controls><source src="videx.mp4" type="video/mp4"></video></body></html>"""
+
+
+
         #if self.path == '/videoFile=':
         #    self.protocol_version = 'HTTP/1.1'
         #    self.send_response(200)
