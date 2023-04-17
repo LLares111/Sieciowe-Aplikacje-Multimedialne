@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
         const tmp = document.getElementById("audioPlayer");
         tmp.src = "cancel.mp3";
     }
+    function imageCancelFunction() {
+    	const tmp = document.getElementById("posterImage");
+        tmp.src = "cancel.jpg";
+    }
     var rows = 0;
     function addAudioRow() {
     	rows = rows + 1;
