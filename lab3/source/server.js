@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
         const tmp = document.getElementById("audioPlayer");
         tmp.src = "cancel.mp3";
     }
-    function imageCancelFunction() {
+    function imgCancelFunction() {
     	const tmp = document.getElementById("posterImage");
         tmp.src = "cancel.jpg";
     }
@@ -61,9 +61,9 @@ app.get('/', (req, res) => {
     	<img id="posterImage" src=${image}> <br>
         <button type="button" id="videoCancel" onclick="videoCancelFunction()"  style="visibility: visible">Video to Cancel</button> <br>
         <button type="button" id="audioCancel" onclick="audioCancelFunction()" style="visibility: visible">Audio to Cancel</button> <br>
-        <button type="button" id="audioAdd" onclick="addAudioRow()">Audio add</button> <br>
-        <button type="button" id="videoAdd" onclick="addVideoRow()">Video add</button> <br>
-        <button type="button" id="imageAdd" onclick="addImageRow()">Image add</button> <br>
+        <button type="button" id="audioAdd" onclick="addAudioRow()">Add audio</button> <br>
+        <button type="button" id="videoAdd" onclick="addVideoRow()">Add video</button> <br>
+        <button type="button" id="imgAdd" onclick="addImageRow()">Add image</button> <br>
         <table id="playlist_table">
         	<tr>
         		<th>No.</th>
