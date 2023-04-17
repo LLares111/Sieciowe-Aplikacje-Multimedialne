@@ -59,10 +59,10 @@ app.get('/', (req, res) => {
     <video id="videoPlayer" width="320" height="240" controls src=${video}></video> <br>
     	<audio id="audioPlayer" controls src=${audio}></audio> <br>
     	<img id="posterImage" src=${image}> <br>
-        <button type="button" id="videoCancel" onclick="videoCancelFunction()"  style="visibility: visible">Video to Cancel</button> <br>
-        <button type="button" id="audioCancel" onclick="audioCancelFunction()" style="visibility: visible">Audio to Cancel</button> <br>
-        <button type="button" id="audioAdd" onclick="addAudioRow()">Add audio</button> <br>
+        <button type="button" id="videoCancel" onclick="videoCancelFunction()"  style="visibility: visible">Video to Cancel</button>
         <button type="button" id="videoAdd" onclick="addVideoRow()">Add video</button> <br>
+        <button type="button" id="audioCancel" onclick="audioCancelFunction()" style="visibility: visible">Audio to Cancel</button>
+        <button type="button" id="audioAdd" onclick="addAudioRow()">Add audio</button> <br>
         <button type="button" id="imgAdd" onclick="addImageRow()">Add image</button> <br>
         <table id="playlist_table">
         	<tr>
