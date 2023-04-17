@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     var rows = 0;
     function addAudioRow() {
     	rows = rows + 1;
-        var table = document.getElementById("table");
+        var table = document.getElementById("playlist_table");
         var row = table.insertRow(rows);
         row.insertCell(0).innerHTML = rows;
         row.insertCell(1).innerHTML = document.getElementById("audioPlayer").getAttribute("src");
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
     }
     function addVideoRow() {
     	rows = rows + 1;
-        var table = document.getElementById("table");
+        var table = document.getElementById("playlist_table");
         var row = table.insertRow(rows);
         row.insertCell(0).innerHTML = rows;
         row.insertCell(1).innerHTML = document.getElementById("videoPlayer").getAttribute("src");
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
     }
     function addImageRow() {
     	rows = rows + 1;
-        var table = document.getElementById("table");
+        var table = document.getElementById("playlist_table");
         var row = table.insertRow(rows);
         row.insertCell(0).innerHTML = rows;
         row.insertCell(1).innerHTML = document.getElementById("posterImage").getAttribute("src");
