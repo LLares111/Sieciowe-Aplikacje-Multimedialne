@@ -1,8 +1,6 @@
 const express = require('express')
 
 const app = express();
-
-
 app.get('/', (req, res) => {
     let video="", audio="", image="";
     if (req.query.videoFile !== null)
@@ -19,7 +17,7 @@ app.get('/', (req, res) => {
     if (isAudioVis === "" || isAudioVis === "hidden")
         document.getElementById("audioAdd").style.visibility = "hidden";
     let isVideoVis = document.getElementById("videoCancel").style.visibility;
-    if (isVideoVis==="" || isVideoVis === "hidden")
+    if (isVideoVis === "" || isVideoVis === "hidden")
         document.getElementById("videoAdd").style.visibility = "hidden";
     };
     function videoCancelFunction() {
@@ -56,7 +54,7 @@ app.get('/', (req, res) => {
         row.insertCell(2).innerHTML = "Image";
     }
 </script>
-<html lang="pl">
+<html>
     <video id="videoPlayer" width="320" height="240" controls src=${video}></video> <br>
     	<audio id="audioPlayer" controls src=${audio}></audio> <br>
     	<img id="posterImage" src=${image}> <br>
@@ -75,7 +73,5 @@ app.get('/', (req, res) => {
 </html>
 `
     res.send(html)
-
 })
-
 app.listen(4080)
