@@ -3,12 +3,9 @@ const express = require('express')
 const app = express();
 app.get('/', (req, res) => {
     let video="", audio="", image="";
-    if (req.query.videoFile !== null)
-        video = req.query.videoFile;
-    if (req.query.audioFile !== null)
-        audio = req.query.audioFile;
-    if (req.query.imgFile !== null)
-        image = req.query.imgFile;
+    if (req.query.videoFile !== null) video = req.query.videoFile;
+    if (req.query.audioFile !== null) audio = req.query.audioFile;
+    if (req.query.imgFile !== null) image = req.query.imgFile;
     let html = `
 <!DOCTYPE html>
 <script>
@@ -34,7 +31,7 @@ app.get('/', (req, res) => {
         var table = document.getElementById("table");
         var row = table.insertRow(rows);
         row.insertCell(0).innerHTML = rows;
-        row.insertCell(1).innerHTML = document.getElementById("audioPlayer").getAttribute("src");;
+        row.insertCell(1).innerHTML = document.getElementById("audioPlayer").getAttribute("src");
         row.insertCell(2).innerHTML = "Audio";
     }
     function addVideoRow() {
@@ -42,7 +39,7 @@ app.get('/', (req, res) => {
         var table = document.getElementById("table");
         var row = table.insertRow(rows);
         row.insertCell(0).innerHTML = rows;
-        row.insertCell(1).innerHTML = document.getElementById("videoPlayer").getAttribute("src");;
+        row.insertCell(1).innerHTML = document.getElementById("videoPlayer").getAttribute("src");
         row.insertCell(2).innerHTML = "Video";
     }
     function addImageRow() {
@@ -50,7 +47,7 @@ app.get('/', (req, res) => {
         var table = document.getElementById("table");
         var row = table.insertRow(rows);
         row.insertCell(0).innerHTML = rows;
-        row.insertCell(1).innerHTML = document.getElementById("posterImage").getAttribute("src");;
+        row.insertCell(1).innerHTML = document.getElementById("posterImage").getAttribute("src");
         row.insertCell(2).innerHTML = "Image";
     }
 </script>
@@ -63,7 +60,7 @@ app.get('/', (req, res) => {
         <button type="button" id="audioAdd" onclick="addAudioRow()">Audio add</button> <br>
         <button type="button" id="videoAdd" onclick="addVideoRow()">Video add</button> <br>
         <button type="button" id="imageAdd" onclick="addImageRow()">Image add</button> <br>
-        <table id="table">
+        <table id="playlist_table">
         	<tr>
         		<th>No.</th>
         		<th>URL</th>
