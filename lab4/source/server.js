@@ -59,6 +59,7 @@ app.get('/', (req, res) => {
 
     	var table = document.getElementById("playlist_table");
     	var current = table.deleteRow(i);
+    	rows = rows - 1;
     }
     
 </script>
