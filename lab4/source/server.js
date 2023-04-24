@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
         	row.insertCell(1).innerHTML = document.getElementById("posterImage").getAttribute("src");
         	row.insertCell(2).innerHTML = "Image";
         }
+        row.insertCell(3).innerHTML = '<button class = "removeRowButton" onclick="removeRow(rows)">Delete</button>';
     }
     
     function removeRow(row) {
