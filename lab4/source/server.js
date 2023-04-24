@@ -1,4 +1,3 @@
-
 const express = require('express')
 
 const app = express();
@@ -61,7 +60,6 @@ app.get('/', (req, res) => {
     	var current = table.deleteRow(i);
     	rows = rows - 1;
     }
-    
 </script>
 <html>
     <video id="videoPlayer" width="320" height="240" controls src=${video}></video> <br>
