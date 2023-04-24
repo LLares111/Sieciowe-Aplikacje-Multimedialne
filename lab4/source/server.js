@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
     function removeRow(row) {
 	var i = row.parentNode.parentNode.rowIndex;
     	var table = document.getElementById("playlist_table");
-    	var current = table.deleteRow(i);
+    	var r = table.deleteRow(i);
     	rows = rows - 1;
     }
 </script>
