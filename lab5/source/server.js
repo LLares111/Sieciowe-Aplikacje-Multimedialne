@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
         }
         row.insertCell(3).innerHTML = '<button class = "removeRowButton" onclick="removeRow(this)">Delete</button>';
         row.insertCell(3).innerHTML = '<button class = "moveRowUpButton" onclick="moveRowUp(this)">Up</button>';
+        row.insertCell(3).innerHTML = '<button class = "moveRowDownButton" onclick="moveRowDown(this)">Down</button>';
     }
     
     function removeRow(row) {
@@ -60,20 +61,37 @@ app.get('/', (req, res) => {
     	rows = rows - 1;
     }
     
-    // TO
-    
     function moveRowUp(row) {
     	var i = row.parentNode.parentNode.rowIndex;
     	var table = document.getElementById("playlist_table");
-    	var rows = table.rows;
-    	var parent = rows[i].parentNode;
+    	var rowss = table.rows;
+    	var parent = rowss[i].parentNode;
     	console.log(i);
     	if(i > 1) {
-		parent.insertBefore(rows[i],rows[i - 1]);
+		parent.insertBefore(rowss[i],rowss[i-1]);
 		i--;
 	}
+	//else if(i === 0) {
+	//	parent.insertAfter(rowss[i],rowss[rows-1])
+	//	i = rowss;
+	//}
     }
     
+    function moveRowDown(row) {
+    	var i = row.parentNode.parentNode.rowIndex;
+    	var table = document.getElementById("playlist_table");
+    	var rowss = table.rows;
+    	var parent = rowss[i].parentNode;
+    	console.log(i);
+    	if(i < rows) {
+		parent.insertBefore(rowss[i+1],rowss[i]);
+		i++;
+	}
+	//else if(i === rows) {
+	//	parent.insertAfter(rowss[i],rowss[rows-1])
+	//	i = rowss;
+	//}
+    }
     
     
     
