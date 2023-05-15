@@ -58,6 +58,19 @@ app.get('/', (req, res) => {
     	var r = table.deleteRow(i);
     	rows = rows - 1;
     }
+    
+    // TO
+    
+    function moveRowUp(row) {
+    	var i = row.parentNode.parentNode.rowIndex;
+    	var table = document.getElementById("playlist_table");
+    	
+    }
+    
+    
+    
+    
+    
 </script>
 <html>
     <video id="videoPlayer" width="320" height="240" controls src=${video}></video> <br>
