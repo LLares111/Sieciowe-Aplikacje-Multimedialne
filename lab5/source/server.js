@@ -71,10 +71,10 @@ app.get('/', (req, res) => {
 		parent.insertBefore(rowss[i],rowss[i-1]);
 		i--;
 	}
-	//else if(i === 0) {
-	//	parent.insertAfter(rowss[i],rowss[rows-1])
-	//	i = rowss;
-	//}
+	else if(i === 1) {
+		parent.insertBefore(rowss[rows],null);
+		i = rows;
+	}
     }
     
     function moveRowDown(row) {
@@ -87,10 +87,10 @@ app.get('/', (req, res) => {
 		parent.insertBefore(rowss[i+1],rowss[i]);
 		i++;
 	}
-	//else if(i === rows) {
-	//	parent.insertAfter(rowss[i],rowss[rows-1])
-	//	i = rowss;
-	//}
+	else if(i === 1) {
+		parent.insertBefore(rowss[1],rowss[1]);
+		i = 1;
+	}
     }
     
     
