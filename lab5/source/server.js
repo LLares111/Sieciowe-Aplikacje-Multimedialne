@@ -66,7 +66,6 @@ app.get('/', (req, res) => {
     	var table = document.getElementById("playlist_table");
     	var rowss = table.rows;
     	var parent = rowss[i].parentNode;
-    	console.log(i);
     	if(i > 1) {
 		parent.insertBefore(rowss[i],rowss[i-1]);
 		i--;
