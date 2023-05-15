@@ -50,6 +50,7 @@ app.get('/', (req, res) => {
         	row.insertCell(2).innerHTML = "Image";
         }
         row.insertCell(3).innerHTML = '<button class = "removeRowButton" onclick="removeRow(this)">Delete</button>';
+        row.insertCell(3).innerHTML = '<button class = "moveRowUpButton" onclick="moveRowUp(this)">Up</button>';
     }
     
     function removeRow(row) {
@@ -64,7 +65,12 @@ app.get('/', (req, res) => {
     function moveRowUp(row) {
     	var i = row.parentNode.parentNode.rowIndex;
     	var table = document.getElementById("playlist_table");
-    	
+    	var rows = table.parentNode;
+    	var parent = rows[i].parentNode;
+    	if(i > 1) {
+		parent.insertBefore(rows[i],rows[i - 1]);
+		i--;
+	}
     }
     
     
