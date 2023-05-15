@@ -65,8 +65,9 @@ app.get('/', (req, res) => {
     function moveRowUp(row) {
     	var i = row.parentNode.parentNode.rowIndex;
     	var table = document.getElementById("playlist_table");
-    	var rows = table.parentNode;
+    	var rows = table.rows;
     	var parent = rows[i].parentNode;
+    	console.log(i);
     	if(i > 1) {
 		parent.insertBefore(rows[i],rows[i - 1]);
 		i--;
