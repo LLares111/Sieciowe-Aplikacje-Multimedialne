@@ -106,11 +106,40 @@ app.get('/', (req, res) => {
 	}
     }
     
+
+        function video_play() {
+            const vid = document.getElementById("videoPlayer");
+                    vid.play();
+	};
+    
+    	function video_pause() {
+            const vid = document.getElementById("videoPlayer");
+            vid.pause();
+	};
+	
+	function audio_play() {
+    	const aud = document.getElementById("audioPlayer");
+                    aud.play();
+	};
+    
+    	function audio_pause() {
+    		const aud = document.getElementById("audioPlayer");
+            aud.pause();
+	};
+
+    
+    
     
 </script>
 <html>
     <video id="videoPlayer" width="320" height="240" controls src=${video}></video> <br>
+	<button class = "videoPlay" id="videoPlay" onclick="video_play()">Video play</button> <br>
+	<button class = "videoPause" id="videoPause" onclick="video_pause()">Video pause</button> <br>
+
+    
     	<audio id="audioPlayer" controls src=${audio}></audio> <br>
+    	<button class = "audioPlay" id="audioPlay" onclick="audio_play()">Audio play</button> <br>
+	<button class = "audioPause" id="audioPause" onclick="audio_pause()">Audio pause</button> <br>
     	<img id="posterImage" src=${image}> <br>
         <button type="button" id="videoCancel" onclick="cancelFunction(0)"  style="visibility: visible">Video to Cancel</button>
         <button type="button" id="videoAdd" onclick="addRow(0)">Add video</button> <br>
