@@ -126,15 +126,11 @@ app.get('/', (req, res) => {
             aud.pause();
 	};
 
-    
-    
-    
 </script>
 <html>
     <video id="videoPlayer" width="320" height="240" controls src=${video}></video> <br>
 	<button class = "videoPlay" id="videoPlay" onclick="video_play()">Video play</button> <br>
 	<button class = "videoPause" id="videoPause" onclick="video_pause()">Video pause</button> <br>
-
     
     	<audio id="audioPlayer" controls src=${audio}></audio> <br>
     	<button class = "audioPlay" id="audioPlay" onclick="audio_play()">Audio play</button> <br>
