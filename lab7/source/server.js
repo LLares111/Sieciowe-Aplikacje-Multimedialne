@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
     if (isVideoVis === "" || isVideoVis === "hidden")
         document.getElementById("videoAdd").style.visibility = "hidden";
     
-    console.log(${video});
     if(${video} == undefined) {
     	document.getElementById("videoPlayer").style.visibility = "hidden";
     };
