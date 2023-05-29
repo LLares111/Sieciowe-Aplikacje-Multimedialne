@@ -16,19 +16,33 @@ app.get('/', (req, res) => {
     let isVideoVis = document.getElementById("videoCancel").style.visibility;
     if (isVideoVis === "" || isVideoVis === "hidden")
         document.getElementById("videoAdd").style.visibility = "hidden";
+    
+    console.log(${video});
+    if(${video} == undefined) {
+    	document.getElementById("videoPlayer").style.visibility = "hidden";
+    };
+    if(${audio} == undefined) {
+    	document.getElementById("audioPlayer").style.visibility = "hidden";
+    };
+    if(${image} == undefined) {
+    	document.getElementById("posterImage").style.visibility = "hidden";
+    };
     };
     function cancelFunction(type) {
     	if(type == 0) {
     		const tmp = document.getElementById("videoPlayer");
     		tmp.src = "cancel.mp4";
+    		document.getElementById("videoPlayer").style.visibility = "visible";
     	}
     	else if (type == 1) {
     		const tmp = document.getElementById("audioPlayer");
         	tmp.src = "cancel.mp3";
+        	document.getElementById("audioPlayer").style.visibility = "visible";
     	}
     	else if (type == 2) {
     		const tmp = document.getElementById("posterImage");
         	tmp.src = "cancel.jpg";
+        	document.getElementById("posterImage").style.visibility = "visible";
     	}
     }
     var rows = 0;
@@ -66,13 +80,12 @@ app.get('/', (req, res) => {
     	var table = document.getElementById("playlist_table");
     	var rowss = table.rows;
     	var parent = rowss[i].parentNode;
-    	console.log(i);
     	if(i > 1) {
 		parent.insertBefore(rowss[i],rowss[i-1]);
 		i--;
 	}
 	else if(i === 1) {
-		parent.insertBefore(rowss[rows],null);
+		parent.insertBefore(rowss[i],null);
 		i = rows;
 	}
     }
@@ -82,17 +95,16 @@ app.get('/', (req, res) => {
     	var table = document.getElementById("playlist_table");
     	var rowss = table.rows;
     	var parent = rowss[i].parentNode;
+    	console.log(i);
     	if(i < rows) {
 		parent.insertBefore(rowss[i+1],rowss[i]);
 		i++;
 	}
-	else if(i === 1) {
-		parent.insertBefore(rowss[1],rowss[1]);
+	else if(i === rows) {
+		parent.insertBefore(rowss[rows],rowss[1]);
 		i = 1;
 	}
     }
-    
-    
     
     
 </script>
